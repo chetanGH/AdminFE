@@ -1,0 +1,181 @@
+:host ::ng-deep button {
+    margin-right: .25em;
+}
+
+.topbar{
+    transition: left .3s;
+    // position: rela;
+    right: 0;
+    left: 250px;
+    height: 50px;
+    // padding: .7em 1.5em 0;
+    box-sizing: border-box;
+    color: #fff;
+    z-index: 101;
+}
+
+.wrapper{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+
+    .sidebar{
+        position: fixed;
+        width: 250px;
+        height: 100%;
+        z-index: 102;
+        overflow: auto;
+        transition: margin-left .3s;
+        background: #4e5159;
+        color:#fff;
+        background: linear-gradient(180deg,#4e5159 0,#1f2023);
+    }
+    .main{
+        transition: margin-left .3s;
+        margin-left: 250px;
+        padding: 70px 2rem 2rem;
+        border:1px solid;
+    }
+}
+
+.list-group{
+    color:black;
+    cursor: pointer;
+}
+
+.row{
+    margin-right:0;
+    margin-left:0;
+}
+.sidebar{
+    width: 250px;
+    height: 100vh;
+    z-index: 102;
+    overflow: auto;
+    transition: margin-left .3s;
+    background: #4e5159;
+    color:#fff;
+    background: linear-gradient(180deg,#4e5159 0,#1f2023);
+}
+.custom-list{
+    padding: 8px;
+    list-style: none;    
+    a{
+        text-decoration: none;
+        color:#fff;
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 50px 1fr 50px;
+    grid-template-areas:
+      "sidenav header"
+      "sidenav main"
+      "sidenav footer";
+    height: 100vh;
+  }
+  
+  /* Give every child element its grid name */
+  .header {
+    position: relative;
+    grid-area: header;
+    background-color: #40a8c4;
+    color:#fff;
+    .welcome{
+      font-size: 22px;
+    }
+  }
+
+  
+  .sidenav {
+    grid-area: sidenav;
+    background-color: #394263;
+  }
+  
+  .main {
+    grid-area: main;
+    // background-color: #8fd4d9;
+  }
+  
+  .footer {
+    grid-area: footer;
+    background-color: #648ca6;
+    text-align: center;
+  }
+
+  .sidenav {
+    display: flex; /* Will be hidden on mobile */
+    flex-direction: column;
+    grid-area: sidenav;
+    background-color: #394263;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .sidenav__list {
+    padding: 0;
+    margin-top: 85px;
+    list-style-type: none;
+  }
+
+  .sidenav__list-item {
+    padding: 20px 20px 20px 40px;
+    color: #ddd;
+    
+  }
+  .sidenav__list-sub-item{
+    padding: 10px;
+  }
+  .active-list{
+    outline: none !important;
+    border: 1px solid #fff;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2);   
+    &:focus {
+      outline: none !important;
+      border: 1px solid #fff;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+  .sidenav__list-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+  }
+
+
+  .menu-icon {
+    position: fixed;
+    display: flex;
+    top: 5px;
+    left: 40px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    cursor: pointer;
+    padding: 12px;
+    color:#fff;
+  }
+
+
+
+  .sub_nav{
+    padding: 0;
+    list-style-type: none;
+
+    .sidenav__list-item {
+      padding: 10px 15px 8px 40px;
+      color: #ddd;
+    }
+  
+    .sidenav__list-item:hover {
+      // text-decoration: underline;
+      background-color: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+    }
+  
+  }

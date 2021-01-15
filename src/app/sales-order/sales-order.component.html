@@ -1,0 +1,21 @@
+<div class="main-overview">
+    <p><i class="pi pi-arrow-left" (click)="goBack()"></i> Create sales Order</p><br>
+    <form #action="ngForm" (ngSubmit)="addSalesOrder(action)">
+        <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col">
+                <label for="provider">Select product</label>
+                <select name="dropdown" id="" required (change)="onSelectionChange($event)" class="form-control" >
+                    <option *ngFor="let item of products" value="{{item._id}}">{{ item.name }}</option>
+                </select>
+            </div>
+            <div class="p-field p-col">
+                <label for="provider">Quantity</label>
+                <input type="number" name="qty" min="1" [(ngModel)]="quantity" required autocomplete="off" class="form-control" placeholder="Quantity of the product">
+            </div>
+        </div>   
+         <button type="submit" [disabled]="!action.form.valid" class="btn btn-primary">Add</button>
+        <button type="button" (click)="resetForm(action)" class="btn btn-danger">Reset</button>
+    
+    </form>
+    
+</div>

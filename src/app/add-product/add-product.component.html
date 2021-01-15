@@ -1,0 +1,22 @@
+<div class="main-overview">
+    <p><i class="pi pi-arrow-left" (click)="goBack()"></i> Add New Product</p><br>
+    <form #action="ngForm" (ngSubmit)="addProduct(action)">
+        <div class="p-fluid p-formgrid p-grid">
+            <div class="p-field p-col">
+                <label for="provider">Name</label>
+                <input type="text" name="pname" [(ngModel)]="products.name" required class="form-control" placeholder="Name of the product">
+            </div>
+            <div class="p-field p-col">
+                <label for="provider">Price</label>
+                <input type="number" name="price" min="1" [(ngModel)]="products.price" required autocomplete="off" class="form-control" placeholder="Price of the product">
+            </div>
+            <div class="p-field p-col">
+                <label for="provider">Quantity</label>
+                <input type="number" name="qty" min="1" [(ngModel)]="products.quantity" required autocomplete="off" class="form-control" placeholder="Quantity of the product">
+            </div>
+        </div>
+        <button type="submit" [disabled]="!action.form.valid" class="btn btn-primary">Add New</button>
+        <button type="button" (click)="resetForm(action)" class="btn btn-danger">Reset</button>
+
+    </form>
+</div>

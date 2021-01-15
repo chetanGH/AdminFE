@@ -1,0 +1,21 @@
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="medium" color="#20b04b" type="ball-clip-rotate"></ngx-spinner>
+<div class="container mt-4">
+    <div class="col-xs col-sm-4 col-md-4 col-lg-6 centerMargin">
+        <div class="card" style="width: 25rem;">
+            <div class="card-body">
+              <form #Login="ngForm" (ngSubmit)="LoginAction(Login)"> 
+                <h2 class="text-center">Login</h2>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" autocomplete="off" placeholder="email" required [(ngModel)]="item.email">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" autocomplete="off" class="form-control" placeholder="password" required [(ngModel)]="item.password">
+                </div>
+                <span class="container">
+                    <button type="submit"class="btn btn-block btn-success btn-login" [disabled]="!Login.form.valid">Login</button>
+                </span>
+              </form>
+            </div>
+        </div>
+    </div>
+</div>

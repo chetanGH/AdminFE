@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    -webkit-box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    zoom: 90%;
+}
+.main-overview {
+    display: row;
+    margin: 20px;
+    height: 100vh;
+}
+
+.cursor{
+    cursor: pointer;
+}
+  

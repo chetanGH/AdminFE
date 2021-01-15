@@ -1,0 +1,25 @@
+.centerMargin{
+    margin: 0 auto;
+}
+
+.btn-login{
+    // margin:0px 100px !important;
+    background:#EF5B25; 
+    border-color: #EF5B25;
+}
+
+@media (min-width: 1281px) {
+    .btn-login{
+        // margin:0px 200px !important;
+        background:#EF5B25; 
+        border-color: #EF5B25;
+    }    
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .btn-login{
+        // margin:0px 35px !important;
+        background:#EF5B25; 
+        border-color: #EF5B25;
+    }   
+}

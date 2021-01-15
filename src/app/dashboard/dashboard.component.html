@@ -1,0 +1,61 @@
+<div class="main-overview">
+    <!-- <p>dashboard works!</p> -->
+    <!-- <div class="p-d-flex">
+      <div class="p-col-3 p-mr-1 card">
+        1
+      </div>
+      <div class="p-col-3 p-mr-1 card">2</div>
+      <div class="p-col-3 p-mr-1 card">3</div>
+      <div class="p-col-3 p-mr-1 card">4</div>
+    </div> -->
+    
+    <div class="row mt-2">
+        <div class="col-md-6 col-sm-12 col-lg-6">
+            <app-chartcomponent *ngIf="seriesData.length > 0;else emptyChart" [id]="'chart1'" [chartType]="'column'" [data]="columnOptions"></app-chartcomponent>
+            <ng-template #emptyChart>
+                <app-chartcomponent  [id]="'chart1'" [chartType]="'column'" [data]="emptyOptions"></app-chartcomponent>
+            </ng-template>
+        </div>
+        <div class="col-md-6 col-sm-12 col-lg-6">
+            <app-chartcomponent *ngIf="seriesData.length > 0;else emptyChart2" [id]="'pie'" [chartType]="'column'" [data]="pieOptions"></app-chartcomponent>
+            <ng-template #emptyChart2>
+                <app-chartcomponent  [id]="'chart2'" [chartType]="'pie'" [data]="emptyOptions"></app-chartcomponent>
+            </ng-template>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <p-table #dt [value]="products" dataKey="_id"
+        [rows]="5" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,20,50]"  styleClass="p-datatable-sm"
+        [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [filterDelay]="1" [globalFilterFields]="['name']"
+        >
+            <ng-template pTemplate="caption">
+                <div class="table-header">
+                    <span class="p-input-icon-left">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Global Search" />
+                    </span>
+                    <span class="btn btn-sm btn-primary ml-2" [routerLink]="['addProduct']" style="float: right;">Add</span>
+                    <span class="btn btn-sm btn-info  ml-2"  [routerLink]="['salesOrder']" style="float: right;">Add Sales Order</span>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Sold</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+                <tr>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price | currency}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td>{{ product?.so ? product?.so?.count : 0 }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+
