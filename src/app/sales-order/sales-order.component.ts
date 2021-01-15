@@ -62,7 +62,7 @@ export class SalesOrderComponent implements OnInit {
             }
           },err=>{
             this.spinner.hide();
-            this.notification.showNotification('error',err.message)
+            this.notification.showNotification('error',err.error.message);
           })
       }else{
         this.notification.showNotification('error','Quantity must be positive.')

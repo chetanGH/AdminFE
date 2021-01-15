@@ -46,8 +46,10 @@ export class AddProductComponent implements OnInit {
             this.spinner.hide();
           }
         },err=>{
+          console.log(err)
           this.spinner.hide();
-          this.notification.showNotification('error',err.message);
+          if(err.status)
+          this.notification.showNotification('error',err.error.message);
         })     
     }else{
       this.notification.showNotification('error','Price and quantity must be positive.')
