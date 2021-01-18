@@ -24,6 +24,11 @@ cd <project>
 ```
 ng serve
 ```
+
+## Build with
+* Angular
+* High Charts for visualisation
+
 ## Authors
 
 * **Chetan Hebsur**
