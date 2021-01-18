@@ -3,3 +3,7 @@ Admin Front End angular code for simple product and sales orders using HighChart
 
 #Install dependencies
 Clone this repo and do "npm install"
+
+#run code
+cd <project>
+ng serve
